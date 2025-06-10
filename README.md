@@ -18,12 +18,10 @@ pip install -r requirements.txt
 ```
 sam_model = load_sam_model()            
 with th.no_grad():
-  masks_tensor = generate_masks_from_batch(sam_model, z_y,)
+  masks_tensor = generate_masks_from_batch(sam_model, x_lr)
   noise_weighted = generate_weighted_noise(masks_tensor)
-  sam_noise = normalize_noise_to_unit_variance(noise_weighted)
+  sam_noise = normalize_noise_to_unit_variance(noise_weighted) #change your gaussian noise to sam noise
 ```
-
-
 
 ## Fast Testing
 ```sh
@@ -35,7 +33,7 @@ python3 inference.py -i [image folder/image path] -o [result folder] --ckpt weig
 Download the necessary models. You can download them into the files of [weights](./weights/) from the link below:
 + [SamSR_v1](https://huggingface.co/zh-liu799/SAMSR/resolve/main/SamSR_v1.pth)
 + [SamSR_v2](https://huggingface.co/zh-liu799/SAMSR/resolve/main/SamSR_v2.pth)
-+ [sam_vit_b](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth)
++ [sam](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth)
 
 ### Results in Table 1
 
