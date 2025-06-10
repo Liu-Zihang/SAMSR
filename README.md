@@ -93,6 +93,6 @@ Please cite our paper if you find our work useful. Thanks!
 }
 ```
 
-## :email: Contact
+##  Contact
 If you have any questions, please feel free to contact me via `liuzihang@bit.edu.cn`.
 
