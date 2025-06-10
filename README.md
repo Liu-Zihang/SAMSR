@@ -16,6 +16,7 @@ pip install -r requirements.txt
 ## Quickly use our SAM noise Module in your super resolution model
 
 ```
+from script_segment import generate_masks_from_batch,load_sam_model, generate_weighted_noise, normalize_noise_to_unit_variance
 sam_model = load_sam_model()            
 with th.no_grad():
   masks_tensor = generate_masks_from_batch(sam_model, x_lr)
