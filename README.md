@@ -13,6 +13,18 @@ conda activate SamSR
 pip install -r requirements.txt
 ```
 
+## Quickly use our SAM noise Module in your super resolution model
+
+```
+sam_model = load_sam_model()            
+with th.no_grad():
+  masks_tensor = generate_masks_from_batch(sam_model, z_y,)
+  noise_weighted = generate_weighted_noise(masks_tensor)
+  sam_noise = normalize_noise_to_unit_variance(noise_weighted)
+```
+
+
+
 ## Fast Testing
 ```sh
 python3 inference.py -i [image folder/image path] -o [result folder] --ckpt weights/SamSR_v1.pth --scale 4 --one_step
