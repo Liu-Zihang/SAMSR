@@ -154,10 +154,10 @@ train:
   iterations: 500000
   milestones: [50000, 500000]
   weight_decay: 0
-  save_freq: 50
+  save_freq: 1000
   # val_freq:  10000
   # log_freq: [1000, 5000, 1] #[training loss, training images, val images]
-  val_freq:  50
-  log_freq: [50, 50000, 1] #[training loss, training images, val images]
+  val_freq:  1000
+  log_freq: [1000, 50000, 1] #[training loss, training images, val images]
   save_images: True  # save the images of tensorboard logging
   use_ema_val: True
