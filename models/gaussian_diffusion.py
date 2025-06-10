@@ -451,7 +451,6 @@ class GaussianDiffusion:
             
             return posterior_mean, posterior_variance, posterior_log_variance_clipped
         else:
-            # 回退到原始方法
             return self.q_posterior_mean_variance(x_start, x_t, t)
 
     def p_mean_variance(
@@ -741,7 +740,6 @@ class GaussianDiffusion:
                 - self.etas_modified * y
             ) / (self.kappa_modified * self.sqrt_etas_modified)
         else:
-            # 回退到原始方法
             return self._predict_eps_from_xstart(x_t, y, t, pred_xstart)
         
     def ddim_inverse(self, model, x, y, t, clip_denoised=True, denoised_fn=None, model_kwargs=None, noise_repeat=False):
@@ -1096,7 +1094,7 @@ class GaussianDiffusion:
             t = th.tensor([i] * y.shape[0], device=device)
 
             self.reset_weight(masks_tensor, t, y, device)
-            z_sample = self.prior_sample_modified(z_y, noise)
+            z_sample = self.prior_sample_modified(z_y, masks_tensor, noise)
 
             with th.no_grad():
                 out = self.p_sample_modified(
