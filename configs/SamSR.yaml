@@ -96,7 +96,7 @@ data:
     params:
       dir_paths: []
       txt_file_path: [
-                      '/liujiacheng/ZM/monkey/audio/more/image/main/traindata/train_v2.txt', 
+                      'traindata/train_v2.txt', 
                      ] 
       im_exts: ['JPEG', ]
       io_backend:
