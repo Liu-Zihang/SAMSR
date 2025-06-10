@@ -16,3 +16,6 @@ restored_output/*
 !testdata/RealSet65
 !testdata/RealSR
 !testdata/RealSet128
+
+!weights/
+!weights/.gitkeep
