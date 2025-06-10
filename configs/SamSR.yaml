@@ -158,6 +158,6 @@ train:
   # val_freq:  10000
   # log_freq: [1000, 5000, 1] #[training loss, training images, val images]
   val_freq:  1000
-  log_freq: [1000, 50000, 1] #[training loss, training images, val images]
-  save_images: True  # save the images of tensorboard logging
+  log_freq: [1000, 500000, 1] #[training loss, training images, val images]
+  save_images: False  # save the images of tensorboard logging
   use_ema_val: True
